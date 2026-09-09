@@ -1,22 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 
 export function ShowList2(){
-    const [num, setNum] = useState(0);
-    const [str, setStr] = useState("");
-    const [bool, setBool] = useState(false);
-    const [arr, setArr] = useState([]);// 4, 5, 6, 7 are use for our knowledge
-
     const [brand, setBrand] = useState("All");
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {},[]);//dependency array is emply and it is also known as side array and if we will not used thsi dependency array then this code 
-
-    useEffect(() => {
+    const [products] = useState(() => {
         const data = localStorage.getItem("products");
-        if(data){
-            setProducts(JSON.parse(data));
-        }
-    }, []);
+        return data ? JSON.parse(data) : [];
+    });
 
     //filter
     const filteredProducts = 

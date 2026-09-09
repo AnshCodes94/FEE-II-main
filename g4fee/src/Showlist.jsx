@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 
 function ShowList() {
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        let data = localStorage.getItem("products");
-        data = JSON.parse(data) || [];
-
-        setProducts(data);
-    }, []);
+    const [products] = useState(() => {
+        const data = localStorage.getItem("products");
+        return JSON.parse(data) || [];
+    });
 
     return (
         <section className="fyc">
