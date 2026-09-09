@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export function Stamp(){
     const [msg, setMsg] = useState("");
 
-    const stamp = { section: "G4" , roll_number: "1324", name:"Ansh"};
+    const stamp = { section: "G4" , roll_number: "1324", name:"Shivansh"};
 
     function handleClick(){
         localStorage.setItem("stamp", JSON.stringify(stamp));
