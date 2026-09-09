@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Storage</title>
+</head>
+<body>
+    <h2>Student Names</h2>
+
+    <ul id="studentList"></ul>
+
+    <script>
+        const Students = [
+        {
+            id: 1,
+            name: "Ansh",
+            course: "JavaScript",
+            marks: 85,
+        },
+        {
+            id: 2,
+            name: "Siddhika",
+            course: "JavaScript",
+            marks: 90,
+        },
+        {
+            id: 3,
+            name: "Amit",
+            course: "JavaScript",
+            marks: 80,
+        },
+        {
+            id: 4,
+            name: "Sneha",
+            course: "JavaScript",
+            marks: 75,
+        },
+        {
+            id: 5,
+            name: "Rohit",
+            course: "JavaScript",
+            marks: 95,
+        },
+        ]
+
+        // Store the Students array in localStorage
+        localStorage.setItem("students", JSON.stringify(Students));
+
+        // Retrieve the Students array from localStorage
+        const data = localStorage.getItem("students");
+
+        // Parse the retrieved data back into an array
+        const studentData = JSON.parse(data);
+
+        // Display the student names in the unordered list
+        const studentList = document.getElementById("studentList");
+
+        studentData.forEach((student) => {
+            const l1 = document.createElement("li");
+            l1.textContent = student.name;
+            studentList.appendChild(l1);
+        });
+    </script>
+</body>
+</html>

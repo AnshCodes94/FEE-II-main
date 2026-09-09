@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        input {
+            display: flex;
+            width: 100%;
+            margin-bottom: 0.5rem;
+            padding: 3px 10px;
+            height: 2rem;
+        }
+
+        button {
+            padding: 3px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="fcx bg1">Header</header>
+    <main class="fcy">
+        <form id="form1" class="card w" style="padding: 2rem">
+            <h3 style="text-align: center; margin-bottom: 1rem;">Myself</h3>
+            <label for="">
+                Section
+                <input type="text" name="section" id="section" placeholder="section" />
+            </label>
+            <label for="">
+                Roll Number
+                <input type="text" name="username" id="rollnumber" placeholder="Enter roll number" />
+            </label>
+            <label for=""> <!-- for = "" for kabek-->
+                Name
+                <input type="text" name="studentName" id="studentName" placeholder="Enter Name" />
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="display"></div>
+    </main>
+    <footer class="fcx bg1">Footer</footer>
+    <script>
+        let form1 = document.querySelector("#form1");
+
+        let section = document.querySelector("#section");
+        let rollNumber = document.querySelector("#rollnumber");
+        let studentName = document.querySelector("#studentName");
+        
+        let display = document.querySelector("#display");
+        form1.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            if (
+                studentName.value.trim() === "" ||
+                rollNumber.value.trim() === "" ||
+                section.value.trim() === ""
+            ) {
+                alert("PLEASE PROVIDE COMPLETE DETAILS");
+                return;
+            }
+
+            display.textContent = `Stamp: ${section.value}, ${rollNumber.value}, ${studentName.value}`;
+
+            localStorage.setItem("section", section.value);
+            localStorage.setItem("rollNumber", rollNumber.value);
+            localStorage.setItem("studentName", studentName.value);
+
+            form1.reset();
+        });
+    </script>
+</body>
+</html>
