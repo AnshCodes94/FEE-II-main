@@ -5,7 +5,7 @@ export function Header() {
 
     useEffect(() => {
         if(dark) {
-            document.body.style.backgroundColor = "hsl(290, 44%, 24%)";
+            document.body.style.backgroundColor = "hsl(239, 33%, 55%)";
             document.body.style.color = "#f1f1f1";
         }
         else{
@@ -41,9 +41,9 @@ export function Header() {
                 />
             </div>
             <div className="fx">
-                <a href="https://github.com/AnshCodes94">Git-Hub</a>
-                <a href="https://leetcode.com/u/Anshmax94/">Leetcode</a>
-                <a href="mailto:ansh1324.becse25@chitkara.edu.in">Gmail</a>
+                <a href="#">Link1</a>
+                <a href="#">Link2</a>
+                <a href="#">Link3</a>
             </div>
             <div className="fx">
                 <button

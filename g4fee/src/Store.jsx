@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 function Store() {
     const [msg, setMsg] = useState("");

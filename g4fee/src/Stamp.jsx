@@ -3,11 +3,15 @@ import React, { useState } from "react";
 export function Stamp(){
     const [msg, setMsg] = useState("");
 
-    const stamp = { section: "G4" , roll_number: "1324", name:"Shivansh"};
+    const stamp = { section: "G4" , roll_number: "0092", name:"Akhilesh"};
 
     function handleClick(){
+        // Saves to localStorage under the key "stamp"
         localStorage.setItem("stamp", JSON.stringify(stamp));
         setMsg("updated");
+
+        // 🚀 CRUCIAL FIX: Tell the Footer component that data was updated right now!
+        window.dispatchEvent(new Event("storageUpdated"));
     }
 
     return (

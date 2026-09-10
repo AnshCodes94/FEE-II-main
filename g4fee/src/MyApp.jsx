@@ -12,13 +12,13 @@ export function MyApp() {
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
                 <Link to="/contact">Contact</Link>
-                <Link to="/showlist2">Product</Link>
+                <Link to="/showList2">Product</Link>
             </nav>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/showlist2" element={<ShowList2 />} />
+                <Route path="/showList2" element={<ShowList2 />} />
             </Routes>
         </>
     );

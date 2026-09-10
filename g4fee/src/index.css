@@ -121,10 +121,12 @@ button:active {
   transform: scale(0.95);
 }
 
-span {
+/* Allow inline widths to take effect */
+span:not([style*="width"]) {
   display: inline-block;
   width: 7rem;
 }
+
 .sp1 {
   width: 1rem;
   text-align: center;
